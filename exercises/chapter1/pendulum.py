@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 # Parameters.
 m = 1 # mass
 g = 10 # gravity
-l = 1 # length
+l = .1 # length
 h = .0001 # discretization step
-T = 5 # time horizon
+T = 2 # time horizon
 
 # Control policy.
 def pi(x):
@@ -25,7 +25,7 @@ def f(x):
 plt.figure()
 K = int(T / h)
 traj = np.zeros((K, 2))
-initial_angles = np.pi * np.arange(11) / 5
+initial_angles = np.pi * np.arange(6) / 5
 for theta_0 in initial_angles:
     traj[0] = [theta_0, 0]
     for k in range(K - 1):
